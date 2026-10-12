@@ -26,9 +26,8 @@ background:linear-gradient(160deg,rgba(47,74,58,.85),rgba(107,68,38,.85)),repeat
 .card h3{margin-top:0;color:var(--wood)}.card ul{list-style:none;padding:0;margin:0}.card li{display:flex;justify-content:space-between;border-bottom:1px dashed #e4d6bf;padding:.45rem 0;color:#8a7a69;font-style:italic;font-size:.93rem}
 .note{font-size:.88rem;color:#7a6c5d}
 .dark{background:var(--forest);color:#efe6d6}.dark h2{color:#fff}.dark .eyebrow{color:var(--gold)}.dark .phtext{color:#c9bfae}
-.pins svg{width:100%;max-width:360px;display:block;margin:auto}
+.kegel-ph{min-height:320px;border:1px solid rgba(200,161,101,.45);font-family:Georgia,serif;font-size:1.15rem;letter-spacing:.04em}.kegel-ph span{border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:.5rem 1.2rem}
 .hours{width:100%;border-collapse:collapse}.hours td{padding:.6rem 0;border-bottom:1px solid #e8dcc8}.hours td:last-child{text-align:right;font-weight:600}
-.map{display:flex;align-items:center;justify-content:center;height:200px;border-radius:16px;margin:1rem 0;text-decoration:none;color:var(--forest);font-weight:600;
-background:radial-gradient(circle at 60% 45%,#c8d8b9 0 8%,transparent 9%),repeating-linear-gradient(35deg,#e6ecd9 0 30px,#dfe7cf 30px 31px),#e6ecd9;border:1px solid #d3dcc2}
-.map span{background:#fff;padding:.6rem 1rem;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.map{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;margin:1rem 0 1.2rem;border:1px solid #e8dcc8;box-shadow:0 8px 28px rgba(60,40,20,.12);background:var(--cream)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.85) sepia(.08)}
 footer{background:#231d18;color:#cbbfae;font-size:.9rem}footer a{color:var(--gold)}.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;padding:2rem 1.4rem}
