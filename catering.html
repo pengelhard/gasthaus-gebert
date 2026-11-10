@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Catering · Gasthaus Gebert Wassertrüdingen</title>
+  <meta name="description" content="Catering vom Gasthaus Gebert für Feiern außer Haus in Wassertrüdingen und Umgebung.">
+  <meta name="theme-color" content="#185C0A">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <a class="sprung" href="#inhalt">Zum Inhalt</a>
+  <p class="demo-leiste">Demo-Entwurf · Platzhalter sind gekennzeichnet · Telefon und Adresse bitte bestätigen</p>
+  <header class="kopf">
+    <div class="kopf-zeile">
+      <a class="marke" href="index.html">
+        <img src="assets/logo-gasthaus-gebert.jpg" width="840" height="560" alt="">
+        <span class="sr-only">Gasthaus Gebert, Startseite</span>
+      </a>
+      <nav id="hauptnav" class="hauptnav" aria-label="Hauptnavigation">
+        <a href="index.html">Start</a>
+        <a href="gasthaus.html">Gasthaus</a>
+        <a href="speisekarte.html">Speisekarte</a>
+        <a href="herstellung.html">Herstellung</a>
+        <a href="familienfeiern.html">Feiern</a>
+        <a href="catering.html" aria-current="page">Catering</a>
+        <a href="kegelbahn.html">Kegelbahn</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <a class="anruf" href="tel:+499836441">
+        <span>09836 441</span>
+        <span class="bestaetigen">bitte bestätigen</span>
+      </a>
+      <button class="menue-knopf" type="button" aria-expanded="false" aria-controls="hauptnav" aria-label="Menü öffnen">
+        <span class="menue-balken"></span>
+        <span class="menue-balken"></span>
+        <span class="menue-balken"></span>
+      </button>
+    </div>
+  </header>
+  <main id="inhalt">
+    
+    <section class="abschnitt seitenkopf">
+      <div class="seite raster-2">
+        <div class="prosa">
+          <p class="ueberzeile">Außer Haus</p>
+          <h1>Catering</h1>
+          <p class="leit">Wenn das Fest woanders stattfindet.</p>
+          <p>Das Gasthaus bietet Catering für Feiern und Veranstaltungen außer Haus an. Was auf die Tafel kommt, sprechen wir mit Ihnen ab.</p>
+          <p class="platzhalter-label">Platzhalter – Inhalt folgt</p>
+          <p>Menüs, Preise und der Umkreis liegen noch nicht vor.</p>
+        </div>
+        <figure class="foto-platz">
+            <figcaption>
+              <span class="platzhalter-label">Platzhalter – Inhalt folgt</span>
+              <strong>Foto Catering folgt</strong>
+            </figcaption>
+          </figure>
+      </div>
+    </section>
+    <section class="band band-weiss">
+      <div class="seite abschnitt">
+        <h2>Angebot</h2>
+        <div data-inhalt="catering" class="menue-leer">
+          <p class="platzhalter-label">Platzhalter – Inhalt folgt</p>
+          <p>Catering-Menüs werden hier eingetragen, sobald sie feststehen.</p>
+        </div>
+      </div>
+    </section>
+    <section class="abschnitt">
+      <div class="seite schmal">
+        <h2>Anfrage Feiern und Catering</h2>
+        <p>Dieselbe Anfrage wie bei den Familienfeiern, hier mit Catering vorausgewählt. Eine Feier im Haus können Sie <a href="familienfeiern.html#anfrage">dort</a> beschreiben.</p>
+        <form class="anfrage" id="anfrage" action="#" method="post" data-demo-form>
+          <div class="feld-zeile">
+            <div>
+              <label for="catering-name">Name</label>
+              <input id="catering-name" name="name" type="text" autocomplete="name">
+            </div>
+            <div>
+              <label for="catering-telefon">Telefon</label>
+              <input id="catering-telefon" name="telefon" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <div class="feld-zeile">
+            <div>
+              <label for="catering-email">E-Mail</label>
+              <input id="catering-email" name="email" type="email" autocomplete="email">
+            </div>
+            <div>
+              <label for="catering-anlass">Anlass</label>
+              <select id="catering-anlass" name="anlass">
+              <option disabled>Bitte wählen</option>
+              <option value="familienfeier">Familienfeier im Haus</option>
+              <option value="veranstaltung">Andere Feier oder Veranstaltung im Haus</option>
+              <option value="catering" selected>Catering außer Haus</option>
+              <option value="offen">Noch offen</option>
+              </select>
+            </div>
+          </div>
+          <div class="feld-zeile">
+            <div>
+              <label for="catering-datum">Wunschdatum</label>
+              <input id="catering-datum" name="datum" type="date">
+            </div>
+            <div>
+              <label for="catering-personen">Personen, ungefähr</label>
+              <input id="catering-personen" name="personen" type="number" inputmode="numeric" min="1">
+            </div>
+          </div>
+          <div>
+            <label for="catering-nachricht">Nachricht</label>
+            <textarea id="catering-nachricht" name="nachricht"></textarea>
+          </div>
+          <button class="btn" type="submit" disabled aria-describedby="catering-hinweis">Anfrage senden</button>
+          <p class="demo-hinweis" id="catering-hinweis">Demo – Versand folgt. Es wird nichts abgeschickt und kein externer Dienst genutzt.</p>
+        </form>
+      </div>
+    </section>
+
+    <aside class="band band-gruen">
+    <div class="seite abschnitt">
+      <p class="ueberzeile">Kontakt</p>
+      <h2>Wir freuen uns auf Sie</h2>
+      <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a> <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span></p>
+      <div class="aktionen">
+        <a class="btn" href="kontakt.html">Kontakt und Anfahrt</a>
+      </div>
+    </div>
+  </aside>
+  </main>
+  <footer class="fuss">
+    <div class="seite fuss-innen">
+      <img class="marke-fuss" src="assets/logo-gasthaus-gebert.jpg" width="840" height="560" alt="">
+      <div>
+        <p class="claim"><span>handgemacht · unverfälscht · ehrlich</span></p>
+        <address>
+            Gasthaus Gebert<br>
+            Obermögersheim 182<br>
+            91717 Wassertrüdingen
+            <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span>
+          </address>
+        <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a> <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span></p>
+      </div>
+      <div>
+        <nav class="fuss-nav" aria-label="Rechtliches">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+        <div class="sozial-platz">
+          <span class="platzhalter-label">Platzhalter – Inhalt folgt</span>
+          <p class="klein">Instagram und Facebook werden verlinkt, sobald die Profile feststehen.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="rufleiste" href="tel:+499836441">Anrufen · 09836 441 <span class="bestaetigen">bitte bestätigen</span></a>
+  <script src="inhalte.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
