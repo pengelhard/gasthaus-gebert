@@ -1,0 +1,11 @@
+{
+  "name": "gasthaus-gebert",
+  "private": true,
+  "description": "Statische Demo-Website. npm run verify prüft Lint, Tests, Build und Invarianten ohne Abhängigkeiten und ohne Secrets.",
+  "scripts": {
+    "verify": "node scripts/verify.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
