@@ -522,8 +522,164 @@ function localTargetIssues(fromFile, raw, pages) {
   return [];
 }
 
+export const JEKYLL_EXCLUDES = [
+  "AGENTS.md",
+  "README*",
+  "*.md",
+  "docs/",
+  "scripts/",
+  "package.json",
+  "package-lock.json",
+  "node_modules/",
+  ".github/",
+  ".gitignore",
+  "Gemfile",
+  "Gemfile.lock",
+  "vendor/",
+];
+
+export const JEKYLL_SWITCHES = [
+  "optional_front_matter.enabled",
+  "readme_index.enabled",
+  "titles_from_headings.enabled",
+  "relative_links.enabled",
+];
+
+function unquoteYaml(raw) {
+  if (
+    (raw.startsWith('"') && raw.endsWith('"') && raw.length >= 2) ||
+    (raw.startsWith("'") && raw.endsWith("'") && raw.length >= 2)
+  ) {
+    return raw.slice(1, -1);
+  }
+  return raw;
+}
+
+export function parseJekyllConfig(text) {
+  const exclude = [];
+  const switches = {};
+  let themeNull = false;
+  let inExclude = false;
+  let section = null;
+
+  for (const line of String(text).split(/\r?\n/)) {
+    if (/^\s*(#|$)/.test(line)) continue;
+
+    if (!/^\s/.test(line)) {
+      const top = /^([A-Za-z0-9_]+):\s*(.*)$/.exec(line);
+      inExclude = false;
+      section = null;
+      if (!top) continue;
+      const key = top[1];
+      const raw = top[2].trim();
+      if (key === "exclude" && raw === "") {
+        inExclude = true;
+        continue;
+      }
+      if (key === "theme") {
+        themeNull = raw === "null" || raw === "~";
+        continue;
+      }
+      if (raw === "") section = key;
+      continue;
+    }
+
+    if (inExclude) {
+      const item = /^\s+-\s+(\S+)\s*$/.exec(line);
+      if (!item) {
+        inExclude = false;
+      } else {
+        exclude.push(unquoteYaml(item[1]));
+        continue;
+      }
+    }
+
+    if (section) {
+      const nested = /^\s+([A-Za-z0-9_]+):\s*(\S+)\s*$/.exec(line);
+      if (!nested) continue;
+      const value = nested[2];
+      let parsed = unquoteYaml(value);
+      if (value === "true") parsed = true;
+      if (value === "false") parsed = false;
+      switches[`${section}.${nested[1]}`] = parsed;
+    }
+  }
+
+  return { exclude, switches, themeNull };
+}
+
+function hasYamlHeader(abs) {
+  const buf = Buffer.alloc(16);
+  const fd = fs.openSync(abs, "r");
+  let n = 0;
+  try {
+    n = fs.readSync(fd, buf, 0, buf.length, 0);
+  } finally {
+    fs.closeSync(fd);
+  }
+  return /^---[ \t]*\r?\n/.test(buf.subarray(0, n).toString("latin1"));
+}
+
+export function publishedSiteRels() {
+  return walkFiles()
+    .map((file) => file.rel)
+    .filter((rel) => {
+      if (rel.startsWith("assets/")) return true;
+      if (rel === "style.css" || rel === "inhalte.js" || rel === "site.js" || rel === "robots.txt") {
+        return true;
+      }
+      return rel.endsWith(".html") && !rel.includes("/");
+    });
+}
+
+export function collectJekyllPublishIssues() {
+  const issues = [];
+  if (fs.existsSync(path.join(root, ".nojekyll"))) {
+    issues.push(".nojekyll darf nicht existieren: GitHub Pages würde Jekyll überspringen und den Branch veröffentlichen");
+  }
+
+  const configPath = path.join(root, "_config.yml");
+  if (!fs.existsSync(configPath)) {
+    issues.push("_config.yml fehlt");
+    return issues;
+  }
+
+  const parsed = parseJekyllConfig(fs.readFileSync(configPath, "utf8"));
+  if (!parsed.themeNull) {
+    issues.push("_config.yml: theme muss null sein, sonst setzt GitHub Pages jekyll-theme-primer");
+  }
+  for (const key of JEKYLL_SWITCHES) {
+    if (parsed.switches[key] !== false) issues.push(`_config.yml: ${key} muss false sein`);
+  }
+  for (const entry of JEKYLL_EXCLUDES) {
+    if (!parsed.exclude.includes(entry)) issues.push(`_config.yml: exclude enthält "${entry}" nicht`);
+  }
+  for (const entry of parsed.exclude) {
+    if (!JEKYLL_EXCLUDES.includes(entry)) issues.push(`_config.yml: exclude "${entry}" ist nicht vorgesehen`);
+  }
+  const seen = new Set();
+  for (const entry of parsed.exclude) {
+    if (seen.has(entry)) issues.push(`_config.yml: exclude "${entry}" doppelt`);
+    seen.add(entry);
+  }
+
+  for (const rel of publishedSiteRels()) {
+    for (const segment of rel.split("/")) {
+      if (/^[._#~]/.test(segment) || segment.endsWith("~")) {
+        issues.push(`${rel}: Jekyll übernimmt Namen mit . _ # ~ am Anfang oder ~ am Ende nicht`);
+      }
+    }
+    if (hasYamlHeader(path.join(root, rel))) {
+      issues.push(`${rel}: beginnt mit Front Matter und würde von Jekyll verarbeitet`);
+    }
+  }
+
+  return issues;
+}
+
 export function collectInvariantIssues() {
   const issues = [];
+  issues.push(...collectJekyllPublishIssues());
   const pages = parsedPages();
 
   for (const [file, doc] of pages) {
@@ -606,7 +762,7 @@ export function collectBuildIssues() {
   const dest = fs.mkdtempSync(path.join(os.tmpdir(), "gasthaus-gebert-build-"));
   const issues = [];
   try {
-    const files = [...listHtmlFiles(), "style.css", "inhalte.js", "site.js", "robots.txt", ".nojekyll"];
+    const files = [...listHtmlFiles(), "style.css", "inhalte.js", "site.js", "robots.txt"];
     for (const rel of files) {
       const source = path.join(root, rel);
       if (!fs.existsSync(source)) {
