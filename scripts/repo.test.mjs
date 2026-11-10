@@ -7,6 +7,7 @@ import {
   collectInvariantIssues,
   collectLintIssues,
   parseHtml,
+  parseJekyllConfig,
   secretHits,
 } from "./lib.mjs";
 
@@ -45,6 +46,31 @@ test("relative Verweise bleiben im Projekt", () => {
 test("HTML meldet unpassende Endetags", () => {
   const doc = parseHtml("<p>Hallo</div>");
   assert.ok(doc.issues.length > 0);
+});
+
+test("exclude in _config.yml enthält die Nicht-Site-Pfade", () => {
+  const config = parseJekyllConfig(fs.readFileSync(new URL("../_config.yml", import.meta.url), "utf8"));
+  assert.deepEqual(config.exclude, [
+    "AGENTS.md",
+    "README*",
+    "*.md",
+    "docs/",
+    "scripts/",
+    "package.json",
+    "package-lock.json",
+    "node_modules/",
+    ".github/",
+    ".gitignore",
+    "Gemfile",
+    "Gemfile.lock",
+    "vendor/",
+  ]);
+  assert.equal(config.themeNull, true);
+  assert.equal(config.switches["optional_front_matter.enabled"], false);
+  assert.equal(config.switches["readme_index.enabled"], false);
+  assert.equal(config.switches["titles_from_headings.enabled"], false);
+  assert.equal(config.switches["relative_links.enabled"], false);
+  assert.equal(fs.existsSync(new URL("../.nojekyll", import.meta.url)), false);
 });
 
 test("Lint, Invarianten und Build des Repos sind grün", () => {

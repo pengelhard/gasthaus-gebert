@@ -1,0 +1,36 @@
+# GitHub Pages bleibt legacy, Branch main, Pfad /.
+# Ohne .nojekyll baut Pages mit Jekyll. theme: null hebt jekyll-theme-primer auf.
+# Die Standard-Plugins lassen sich nicht abschalten. enabled: false hält sie davon ab,
+# Markdown in Seiten zu verwandeln oder umzuschreiben.
+# HTML, CSS und JS ohne Front Matter kopiert Jekyll unverändert.
+# include ist leer gelassen: keine Site-Datei beginnt mit _ oder .
+
+theme: null
+
+optional_front_matter:
+  enabled: false
+
+readme_index:
+  enabled: false
+
+titles_from_headings:
+  enabled: false
+
+relative_links:
+  enabled: false
+
+exclude:
+  # Verzeichnisse mit Schrägstrich, damit docs.html und scripts.html nicht mitgetroffen werden.
+  - AGENTS.md
+  - "README*"
+  - "*.md"
+  - docs/
+  - scripts/
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - .github/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
