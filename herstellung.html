@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Eigene Herstellung · Gasthaus Gebert</title>
   <meta name="description" content="Wurstwaren aus eigener Herstellung im Gasthaus Gebert. Handgemacht, unverfälscht, ehrlich.">
-  <meta name="theme-color" content="#185C0A">
+  <meta name="theme-color" content="#1d4a28">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -19,7 +19,7 @@
   <header class="kopf">
     <div class="kopf-zeile">
       <a class="marke" href="index.html">
-        <img src="assets/logo-gasthaus-gebert.jpg" width="840" height="560" alt="">
+        <img src="assets/logo-gasthaus-gebert.webp" width="428" height="280" alt="">
         <span class="sr-only">Gasthaus Gebert, Startseite</span>
       </a>
       <nav id="hauptnav" class="hauptnav" aria-label="Hauptnavigation">
@@ -32,10 +32,10 @@
         <a href="kegelbahn.html">Kegelbahn</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
-      <a class="anruf" href="tel:+499836441">
-        <span>09836 441</span>
+      <div class="anruf-block">
+        <a class="btn" href="tel:+499836441">09836 441</a>
         <span class="bestaetigen">bitte bestätigen</span>
-      </a>
+      </div>
       <button class="menue-knopf" type="button" aria-expanded="false" aria-controls="hauptnav" aria-label="Menü öffnen">
         <span class="menue-balken"></span>
         <span class="menue-balken"></span>
@@ -52,13 +52,14 @@
           <h1>Eigene Herstellung</h1>
           <p class="leit">Handgemacht. Unverfälscht. Ehrlich.</p>
           <p>Die eigenen Wurstwaren sind das handwerkliche Alleinstellungsmerkmal des Hauses. Sie stehen im Zeichen, und sie sollen auf der Seite einen eigenen Platz haben: Herstellung, Produkte, Qualität.</p>
-          <p class="platzhalter-label">Platzhalter – Inhalt folgt</p>
+          <p class="platzhalter-label">Platzhalter</p>
           <p>Sortiment, Termine und der Weg zur Vorbestellung liegen noch nicht vor. Was es wann gibt, wird nicht geschätzt.</p>
           <p class="kontaktzeile">Fragen dazu am Telefon: <a href="tel:+499836441">09836 441</a> <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span></p>
         </div>
         <figure class="foto-platz">
+            <img src="assets/bildrahmen.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
             <figcaption>
-              <span class="platzhalter-label">Platzhalter – Inhalt folgt</span>
+              <span class="platzhalter-label">Platzhalter</span>
               <strong>Foto Wurstwaren folgt</strong>
             </figcaption>
           </figure>
@@ -67,8 +68,9 @@
     <section class="band band-weiss">
       <div class="seite abschnitt raster-2 umgekehrt">
         <figure class="foto-platz">
+            <img src="assets/bildrahmen.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
             <figcaption>
-              <span class="platzhalter-label">Platzhalter – Inhalt folgt</span>
+              <span class="platzhalter-label">Platzhalter</span>
               <strong>Foto Herstellung folgt</strong>
             </figcaption>
           </figure>
@@ -76,26 +78,15 @@
           <p class="ueberzeile">Handwerk</p>
           <h2>Sehen, wie gearbeitet wird</h2>
           <p>Bilder aus der Herstellung folgen. Bis dahin bleibt die Fläche beschriftet und leer.</p>
-          <p class="platzhalter-label">Platzhalter – Inhalt folgt</p>
+          <p class="platzhalter-label">Platzhalter</p>
           <p>Auch zur Art der Herstellung und zu den Menschen, die sie machen, fehlt noch der Text aus dem Haus.</p>
         </div>
       </div>
     </section>
-
-    <aside class="band band-gruen">
-    <div class="seite abschnitt">
-      <p class="ueberzeile">Kontakt</p>
-      <h2>Wir freuen uns auf Sie</h2>
-      <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a> <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span></p>
-      <div class="aktionen">
-        <a class="btn" href="kontakt.html">Kontakt und Anfahrt</a>
-      </div>
-    </div>
-  </aside>
   </main>
   <footer class="fuss">
     <div class="seite fuss-innen">
-      <img class="marke-fuss" src="assets/logo-gasthaus-gebert.jpg" width="840" height="560" alt="">
+      <img class="marke-fuss" src="assets/logo-gasthaus-gebert.webp" width="428" height="280" alt="">
       <div>
         <p class="claim"><span>handgemacht · unverfälscht · ehrlich</span></p>
         <address>
@@ -112,13 +103,16 @@
           <a href="datenschutz.html">Datenschutz</a>
         </nav>
         <div class="sozial-platz">
-          <span class="platzhalter-label">Platzhalter – Inhalt folgt</span>
+          <span class="platzhalter-label">Platzhalter</span>
           <p class="klein">Instagram und Facebook werden verlinkt, sobald die Profile feststehen.</p>
         </div>
       </div>
     </div>
   </footer>
-  <a class="rufleiste" href="tel:+499836441">Anrufen · 09836 441 <span class="bestaetigen">bitte bestätigen</span></a>
+  <div class="rufleiste">
+    <a class="btn" href="tel:+499836441">Anrufen</a>
+    <span class="bestaetigen">bitte bestätigen</span>
+  </div>
   <script src="inhalte.js"></script>
   <script src="site.js"></script>
 </body>

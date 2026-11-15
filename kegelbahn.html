@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Kegelbahn · Gasthaus Gebert Obermögersheim</title>
   <meta name="description" content="Kegelbahn direkt im Gasthaus Gebert in Obermögersheim. Kegeln, Essen und Feiern unter einem Dach.">
-  <meta name="theme-color" content="#185C0A">
+  <meta name="theme-color" content="#1d4a28">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -19,7 +19,7 @@
   <header class="kopf">
     <div class="kopf-zeile">
       <a class="marke" href="index.html">
-        <img src="assets/logo-gasthaus-gebert.jpg" width="840" height="560" alt="">
+        <img src="assets/logo-gasthaus-gebert.webp" width="428" height="280" alt="">
         <span class="sr-only">Gasthaus Gebert, Startseite</span>
       </a>
       <nav id="hauptnav" class="hauptnav" aria-label="Hauptnavigation">
@@ -32,10 +32,10 @@
         <a href="kegelbahn.html" aria-current="page">Kegelbahn</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
-      <a class="anruf" href="tel:+499836441">
-        <span>09836 441</span>
+      <div class="anruf-block">
+        <a class="btn" href="tel:+499836441">09836 441</a>
         <span class="bestaetigen">bitte bestätigen</span>
-      </a>
+      </div>
       <button class="menue-knopf" type="button" aria-expanded="false" aria-controls="hauptnav" aria-label="Menü öffnen">
         <span class="menue-balken"></span>
         <span class="menue-balken"></span>
@@ -53,12 +53,13 @@
           <p class="leit">Kegeln, essen, feiern – unter einem Dach.</p>
           <p>Die Kegelbahn liegt direkt im Gasthaus. Es ist kein zweites Lokal und kein Umweg: Wer kegelt, bleibt zum Essen und zum Feiern im Haus.</p>
           <p>Ein touristischer Eintrag beschreibt die Bahn als vollautomatisch. <span class="bestaetigen">bitte bestätigen</span></p>
-          <p class="platzhalter-label">Platzhalter – Inhalt folgt</p>
+          <p class="platzhalter-label">Platzhalter</p>
           <p>Anzahl der Bahnen, Dauer, Preise und wie eine Bahn reserviert wird, liegen noch nicht vor.</p>
         </div>
         <figure class="foto-platz">
+            <img src="assets/bildrahmen.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
             <figcaption>
-              <span class="platzhalter-label">Platzhalter – Inhalt folgt</span>
+              <span class="platzhalter-label">Platzhalter</span>
               <strong>Foto Kegelbahn folgt</strong>
             </figcaption>
           </figure>
@@ -102,21 +103,10 @@
         </form>
       </div>
     </section>
-
-    <aside class="band band-gruen">
-    <div class="seite abschnitt">
-      <p class="ueberzeile">Kontakt</p>
-      <h2>Wir freuen uns auf Sie</h2>
-      <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a> <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span></p>
-      <div class="aktionen">
-        <a class="btn" href="kontakt.html">Kontakt und Anfahrt</a>
-      </div>
-    </div>
-  </aside>
   </main>
   <footer class="fuss">
     <div class="seite fuss-innen">
-      <img class="marke-fuss" src="assets/logo-gasthaus-gebert.jpg" width="840" height="560" alt="">
+      <img class="marke-fuss" src="assets/logo-gasthaus-gebert.webp" width="428" height="280" alt="">
       <div>
         <p class="claim"><span>handgemacht · unverfälscht · ehrlich</span></p>
         <address>
@@ -133,13 +123,16 @@
           <a href="datenschutz.html">Datenschutz</a>
         </nav>
         <div class="sozial-platz">
-          <span class="platzhalter-label">Platzhalter – Inhalt folgt</span>
+          <span class="platzhalter-label">Platzhalter</span>
           <p class="klein">Instagram und Facebook werden verlinkt, sobald die Profile feststehen.</p>
         </div>
       </div>
     </div>
   </footer>
-  <a class="rufleiste" href="tel:+499836441">Anrufen · 09836 441 <span class="bestaetigen">bitte bestätigen</span></a>
+  <div class="rufleiste">
+    <a class="btn" href="tel:+499836441">Anrufen</a>
+    <span class="bestaetigen">bitte bestätigen</span>
+  </div>
   <script src="inhalte.js"></script>
   <script src="site.js"></script>
 </body>
