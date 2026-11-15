@@ -237,25 +237,19 @@ a:hover { color: var(--wein); }
   margin: 0 0 1rem;
 }
 .claim {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin: 0 0 1rem;
-  max-width: 100%;
-  min-width: 0;
+  margin: 0 0 0.85rem;
   color: var(--wein);
   font-weight: 600;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
-.claim span { min-width: 0; }
-.claim::before, .claim::after {
+.claim::after {
   content: "";
-  width: 1.6rem;
+  display: block;
+  width: 2.2rem;
   height: 1px;
+  margin-top: 0.7rem;
   background: var(--gold);
-  flex: 0 0 auto;
 }
 
 .aktionen { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.35rem 0 0; }
@@ -542,8 +536,8 @@ textarea { min-height: 8.5rem; resize: vertical; }
 }
 .fuss address, .fuss .kontaktzeile { max-width: 100%; overflow-wrap: break-word; }
 .fuss a { color: var(--creme); }
-.fuss .claim { margin: 0.15rem 0 0.7rem; }
-.fuss .claim::before, .fuss .claim::after { background: var(--gold); }
+.fuss .claim { margin: 0.15rem 0 0.85rem; }
+.fuss .claim::after { background: var(--gold); }
 .fuss-nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; }
 .fuss-nav a { text-decoration: none; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
 .fuss-nav a:hover { text-decoration: underline; }
