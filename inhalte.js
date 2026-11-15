@@ -17,8 +17,16 @@
 */
 window.GASTHAUS_INHALTE = {
   oeffnungszeiten: {
-    freigegeben: false,
-    zeilen: [],
+    freigegeben: true,
+    zeilen: [
+      { tag: "Montag", zeit: "geschlossen" },
+      { tag: "Dienstag", zeit: "geschlossen" },
+      { tag: "Mittwoch", zeit: "geschlossen" },
+      { tag: "Donnerstag", zeit: "11:00–20:00" },
+      { tag: "Freitag", zeit: "11:00–21:00" },
+      { tag: "Samstag", zeit: "11:00–21:00" },
+      { tag: "Sonntag", zeit: "10:00–20:00" }
+    ],
     hinweis: ""
   },
   speisekarte: {

@@ -218,6 +218,7 @@ a:hover { color: var(--wein); }
 .abschnitt { padding: 3.4rem 0; }
 .einleitung { font-size: 1.12rem; max-width: 38rem; }
 .prosa p, .prosa li { max-width: 62ch; }
+.prosa h2 { font-size: 1.35rem; margin-top: 1.7rem; }
 
 .ueberzeile {
   margin: 0 0 0.7rem;
@@ -366,6 +367,31 @@ a:hover { color: var(--wein); }
   aspect-ratio: 3 / 2;
   border-radius: 3px 3px 0 0;
   box-shadow: none;
+}
+.foto-echt {
+  aspect-ratio: auto;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+.foto-echt img {
+  position: relative;
+  inset: auto;
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+.foto-echt figcaption {
+  position: static;
+  background: none;
+  color: inherit;
+  padding: 0.55rem 0 0;
+}
+.foto-echt figcaption strong,
+.foto-echt figcaption {
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .raster-2 { display: grid; gap: 1.8rem; align-items: center; }
@@ -583,7 +609,7 @@ code { font-family: ui-monospace, "Cascadia Code", monospace; font-size: 0.92em;
 
 @media (min-width: 720px) {
   .feld-zeile { grid-template-columns: 1fr 1fr; }
-  .highlights { grid-template-columns: repeat(3, 1fr); }
+  .highlights { grid-template-columns: 1fr 1fr; }
   .anfrage { padding: 1.5rem; }
   .kacheln { grid-template-columns: 1fr 1fr; }
   .stimmen { grid-template-columns: 1fr 1fr; }
