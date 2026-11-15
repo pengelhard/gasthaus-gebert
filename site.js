@@ -196,7 +196,9 @@
       plan = L.map(feld, {
         scrollWheelZoom: true,
         touchZoom: true,
-        dragging: true
+        dragging: true,
+        bounceAtZoomLimits: true,
+        tapHold: false
       }).setView(ORT, 16);
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
@@ -248,4 +250,34 @@
   if (ladenKnopf) {
     ladenKnopf.addEventListener("click", function () { entscheiden("ja"); });
   }
+
+  function karteWeg() {
+    if (plan) {
+      plan.remove();
+      plan = null;
+    }
+    var feld = document.getElementById("karte-feld");
+    if (!feld) return;
+    feld.replaceChildren();
+    feld.className = "karte-feld";
+    feld.removeAttribute("style");
+    feld.hidden = true;
+  }
+
+  document.addEventListener("click", function (event) {
+    if (!plan) return;
+    var link = event.target.closest && event.target.closest("a[href]");
+    if (!link || link.closest(".leaflet-container")) return;
+    if (link.target === "_blank") return;
+    var href = link.getAttribute("href");
+    if (!href || href.charAt(0) === "#" || href.indexOf("tel:") === 0 || href.indexOf("mailto:") === 0) return;
+    karteWeg();
+  }, true);
+
+  window.addEventListener("pagehide", karteWeg);
+  window.addEventListener("pageshow", function (event) {
+    if (!event.persisted) return;
+    if (!document.getElementById("anfahrt") || lesen() !== "ja") return;
+    karteZeichnen();
+  });
 })();
