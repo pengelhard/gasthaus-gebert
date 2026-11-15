@@ -212,7 +212,7 @@ a:hover { color: var(--wein); }
   background: var(--creme);
   border-top: 1px solid rgba(168, 132, 61, 0.45);
 }
-.rufleiste .bestaetigen { color: var(--wein); }
+.rufleiste .btn { width: 100%; }
 
 .seite { width: min(1120px, calc(100% - 2.6rem)); margin-inline: auto; }
 .abschnitt { padding: 3.4rem 0; }
