@@ -27,7 +27,33 @@
       "addressLocality": "Wassertrüdingen",
       "addressCountry": "DE"
     },
-    "telephone": "+499836441"
+    "telephone": "+499836441",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Thursday",
+        "opens": "11:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Friday",
+        "opens": "11:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Saturday",
+        "opens": "11:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Sunday",
+        "opens": "10:00",
+        "closes": "20:00"
+      }
+    ]
   }
   </script>
 </head>
@@ -186,28 +212,23 @@
       <div class="seite abschnitt">
         <p class="ueberzeile">Aus der Küche</p>
         <h2>Kulinarische Highlights</h2>
-        <p>Gerichte zeigen wir, sobald Fotos und die Karte vorliegen.</p>
+        <p>Die Fotos zeigen Teller aus der Küche. Gerichte und Preise der Karte folgen.</p>
         <div class="highlights">
-          <figure class="foto-platz">
-            <img src="assets/bildrahmen.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
-            <figcaption>
-              <span class="platzhalter-label">Platzhalter</span>
-              <strong>Foto Gericht folgt</strong>
-            </figcaption>
+          <figure class="foto-platz foto-echt">
+            <img src="assets/fotos/speise-schmor-800.webp" srcset="assets/fotos/speise-schmor-800.webp 800w, assets/fotos/speise-schmor-1600.webp 1600w" sizes="(min-width: 1100px) 540px, (min-width: 720px) 46vw, 80vw" width="1600" height="1067" alt="Weißer Teller auf einem Holztisch: Fleischstücke in brauner Soße, Kroketten, Petersilie und eine gelbe Blüte." loading="lazy" decoding="async">
+            <figcaption>Fleischstücke in Soße mit Kroketten</figcaption>
           </figure>
-          <figure class="foto-platz">
-            <img src="assets/bildrahmen.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
-            <figcaption>
-              <span class="platzhalter-label">Platzhalter</span>
-              <strong>Foto Gericht folgt</strong>
-            </figcaption>
+          <figure class="foto-platz foto-echt">
+            <img src="assets/fotos/speise-schnitzel-800.webp" srcset="assets/fotos/speise-schnitzel-800.webp 800w, assets/fotos/speise-schnitzel-1600.webp 1600w" sizes="(min-width: 1100px) 540px, (min-width: 720px) 46vw, 80vw" width="1600" height="1067" alt="Weißer Teller auf einem Holztisch: paniertes Schnitzel mit Zitrone und Petersilie, Spätzle in Soße, dazu Tomate und Gurke." loading="lazy" decoding="async">
+            <figcaption>Paniertes Schnitzel mit Spätzle</figcaption>
           </figure>
-          <figure class="foto-platz">
-            <img src="assets/bildrahmen.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
-            <figcaption>
-              <span class="platzhalter-label">Platzhalter</span>
-              <strong>Foto Spezialität folgt</strong>
-            </figcaption>
+          <figure class="foto-platz foto-echt">
+            <img src="assets/fotos/speise-salat-800.webp" srcset="assets/fotos/speise-salat-800.webp 800w, assets/fotos/speise-salat-1600.webp 1600w" sizes="(min-width: 1100px) 540px, (min-width: 720px) 46vw, 80vw" width="1600" height="1067" alt="Weißer Teller auf einem Holztisch: Blattsalat mit Orangenspalten und Gurke, zwei panierte Taler, weiße Scheiben und ein roter Dip." loading="lazy" decoding="async">
+            <figcaption>Salat mit panierten Talern</figcaption>
+          </figure>
+          <figure class="foto-platz foto-echt">
+            <img src="assets/fotos/speise-wuerste-800.webp" srcset="assets/fotos/speise-wuerste-800.webp 800w, assets/fotos/speise-wuerste-1600.webp 1600w" sizes="(min-width: 1100px) 540px, (min-width: 720px) 46vw, 80vw" width="1600" height="1067" alt="Tiefer weißer Teller auf einem Holztisch: zwei Würste unter hellen Streifen aus Kraut oder Zwiebel, mit Petersilie, in heller Brühe." loading="lazy" decoding="async">
+            <figcaption>Würste mit Kraut- oder Zwiebelstreifen</figcaption>
           </figure>
         </div>
         <div class="aktionen">
@@ -337,8 +358,16 @@
         <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a></p>
         <h3 id="zeiten">Öffnungszeiten</h3>
         <div data-inhalt="oeffnungszeiten">
-          <p class="platzhalter-label">Platzhalter</p>
-          <p>Die Öffnungszeiten liegen noch nicht vor. Bitte kurz anrufen.</p>
+          <table class="zeiten">
+            <caption class="sr-only">Öffnungszeiten</caption>
+            <tr><td>Montag</td><td>geschlossen</td></tr>
+            <tr><td>Dienstag</td><td>geschlossen</td></tr>
+            <tr><td>Mittwoch</td><td>geschlossen</td></tr>
+            <tr><td>Donnerstag</td><td>11:00–20:00</td></tr>
+            <tr><td>Freitag</td><td>11:00–21:00</td></tr>
+            <tr><td>Samstag</td><td>11:00–21:00</td></tr>
+            <tr><td>Sonntag</td><td>10:00–20:00</td></tr>
+          </table>
         </div>
         <div class="aktionen">
           <a class="btn btn-ghost" href="kontakt.html">Kontakt und Anfahrt</a>

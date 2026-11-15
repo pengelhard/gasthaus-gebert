@@ -61,10 +61,10 @@ Abschnitte: `#top`, `#ueber`, `#angebote`, `#kueche`, `#herstellung`, `#feiern`,
 - Die Herstellungskachel hat die ID `schlachtung`. Darauf zeigt kein Link.
 - „Tisch reservieren“ führt auf `kontakt.html#reservierung`.
 - „Feier anfragen“ auf `familienfeiern.html#anfrage`, „Catering anfragen“ auf `catering.html#anfrage`.
-- Öffnungszeiten: Platzhalter über `data-inhalt="oeffnungszeiten"`.
-- Karte: iframe auf Google Maps, dazu „Route planen“ als externer Link. Hinweis auf `datenschutz.html`.
-- JSON-LD `@type` Restaurant, inklusive der GitHub-Pages-URL, Logo, Adresse und Telefon.
-- Gästestimmen und Fotos sind Platzhalter, keine eingebetteten Bewertungen.
+- Öffnungszeiten stehen in `#zeiten` und kommen aus `inhalte.js` (`freigegeben: true`): Mo–Mi geschlossen, Do 11:00–20:00, Fr und Sa 11:00–21:00, So 10:00–20:00.
+- Eine Karte gibt es auf der Startseite nicht. Der Link „Alle Bewertungen auf Google“ ist ein normaler Link, die Stimmen stehen als Text in der Seite.
+- JSON-LD `@type` Restaurant, inklusive der GitHub-Pages-URL, Logo, Adresse, Telefon und `openingHoursSpecification` für die geöffneten Tage.
+- Unter `#kueche` liegen vier Speisenfotos. Außenansicht, Gastraum, Saal, Kegelbahn, Biergarten, Catering und Herstellung bleiben Platzhalter.
 
 Prüfen: `index.html` öffnen, jede Kachel und „Tisch reservieren“ anklicken, die Karte sehen, den Datenschutz-Hinweis lesen.
 
@@ -76,7 +76,7 @@ Prüfen: Seite öffnen, die vier Textlinks und den Kontakt-Knopf folgen.
 
 ## Speisekarte `speisekarte.html`
 
-Platzhalter für Gerichte (`data-inhalt="speisekarte"`) und Getränke (`data-inhalt="getraenke"`), dazu Foto-Platzhalter. Keine Preise im HTML.
+Platzhalter für Gerichte (`data-inhalt="speisekarte"`) und Getränke (`data-inhalt="getraenke"`). Darunter vier Speisenfotos, dieselben wie auf der Startseite. Keine Preise im HTML.
 
 Prüfen: Seite öffnen, beide Platzhalter lesen. Mit einem lokalen Eintrag in `inhalte.js` erscheinen Kategorien, sonst nicht.
 
@@ -100,33 +100,36 @@ Prüfen: Seite öffnen, Vorauswahl im Feld Anlass ansehen, Link zur Feier-Seite 
 
 ## Kegelbahn `kegelbahn.html`
 
-Text: die Bahn liegt im Haus. Ein touristischer Eintrag wird als „vollautomatisch“ zitiert und mit „bitte bestätigen“ markiert. Bahnen, Dauer, Preise und Reservierungsart stehen nicht in der Datei. Formular `#anfrage` nur für die Bahn.
+Text: die Bahn liegt im Haus. Ein touristischer Eintrag wird als „vollautomatisch“ zitiert und mit „bitte bestätigen“ markiert. Bahnen, Dauer, Preise und Reservierungsart stehen nicht in der Datei. Es gibt kein Formular, die Reservierung läuft über das Telefon.
 
-Prüfen: Seite öffnen, Formular deaktiviert lassen, den Link auf `familienfeiern.html#anfrage` folgen.
+Prüfen: Seite öffnen und den Link auf `familienfeiern.html#anfrage` folgen.
 
 ## Kontakt `kontakt.html`
 
-`#reservierung` sagt, dass es keine Online-Reservierung gibt und ein Anruf genügt. Dieselbe Adresse und dasselbe Telefon wie auf den anderen Seiten, erneut als unbestätigt markiert. `#anfahrt` mit derselben Google-Maps-Einbindung wie auf der Startseite. `#zeiten` mit Platzhalter für Öffnungszeiten. Platzhalter für E-Mail, Ansprechperson, Parken, Bus und Social-Profile. JSON-LD wie auf der Startseite.
+`#reservierung` sagt, dass es keine Online-Reservierung gibt und ein Anruf genügt. Dieselbe Adresse und dasselbe Telefon wie auf den anderen Seiten. `#anfahrt` mit der Google-Maps-Karte, nur auf dieser Seite. `#zeiten` mit denselben Öffnungszeiten wie auf der Startseite. Die E-Mail-Adresse fehlt noch, der Inhaber ist im Impressum genannt. Platzhalter für Parken, Bus und Social-Profile. JSON-LD wie auf der Startseite, einschließlich der Öffnungszeiten.
 
 Prüfen: `kontakt.html#reservierung` und `#anfahrt` öffnen. Es gibt kein Reservierungsformular.
 
 ## Impressum `impressum.html`
 
-Platzhalter. Der Text sagt, dass Name, Anschrift und Rechtsform des Betreibers noch fehlen und die Kontaktdaten auf den anderen Seiten kein Impressum ersetzen.
+Entwurf nach § 5 DDG: Gasthaus Gebert, Inhaber Michael Gebert, Adresse und Telefon wie auf den anderen Seiten. E-Mail, USt-IdNr., Handelsregister sowie Aufsichtsbehörde und Gaststättenerlaubnis stehen als `[bitte ergänzen]`. Verantwortlich nach § 18 Abs. 2 MStV ist Michael Gebert. Hinweis nach § 36 VSBG: keine Teilnahme an einer Verbraucherschlichtung. Kein Verweis auf die eingestellte OS-Plattform. Bildnachweis für die Speisenfotos. Der Entwurf ist vor einer echten Veröffentlichung rechtlich zu prüfen.
 
 Prüfen: Seite öffnen. Sie ist über den Fuß erreichbar, nicht über die Hauptnavigation.
 
 ## Datenschutz `datenschutz.html`
 
-Platzhalter plus diese Aussagen aus der Datei:
+Entwurf, Stand November 2026, vor einer echten Veröffentlichung rechtlich zu prüfen. Er beschreibt nur, was der Code tut:
 
-- statische Demo, keine Analyse- und keine Tracking-Werkzeuge
-- Schriften vom selben Server, kein Schriftanbieter
-- Formulare senden nichts, der Knopf ist deaktiviert
-- Google Maps auf Start- und Kontaktseite kann die IP-Adresse an Google übertragen
-- ein Telefonlink öffnet die Anruf-Funktion des Geräts
-
-Rechtsgrundlagen, Speicherdauern, Betroffenenrechte, Hosting und Auftragsverarbeitung sind im Text als noch zu ergänzen markiert.
+- Verantwortlicher Michael Gebert, Adresse und Telefon wie auf den Seiten, E-Mail `[bitte ergänzen]`
+- Hosting bei GitHub Pages, Server-Logs und IP-Adresse, Server können in den USA stehen, EU-US Data Privacy Framework
+- Telefonlink öffnet die Anruffunktion, die Website speichert den Anruf nicht
+- keine E-Mail-Adresse und kein `mailto`
+- Formular auf Familienfeiern und Catering sendet nichts: `action="#"`, Knopf deaktiviert, kein Formulardienst
+- Google-Maps-iframe nur auf der Kontaktseite; Bewertungen sind statischer Text plus Link
+- Schriften vom selben Server
+- keine Cookies und kein Analysewerkzeug im Code der Seiten
+- Auslieferung über HTTPS
+- Betroffenenrechte und Beschwerde an das BayLDA in Ansbach
 
 Prüfen: Seite öffnen und die vier Abschnitte lesen. Im Quelltext der anderen Seiten kein Analyse-Skript suchen: eingebunden sind nur `inhalte.js` und `site.js`.
 
@@ -142,10 +145,10 @@ Prüfen: Netzwerk-Tab beim Laden. Schriften kommen aus `assets/fonts/`, nicht vo
 
 ## Offen
 
-- Betreiber, Rechtsform und eine bestätigte E-Mail-Adresse für Impressum und Datenschutz.
-- Ob Adresse und Telefon `+499836441` / 09836 441 stimmen. Die Seiten markieren beides als unbestätigt.
-- Öffnungszeiten, Speisen, Getränke, Catering-Angebote und alle Preise.
+- E-Mail, USt-IdNr., Handelsregister, Aufsichtsbehörde und Gaststättenerlaubnis. Impressum und Datenschutz vor einer echten Veröffentlichung rechtlich prüfen.
+- Speisen, Getränke, Catering-Angebote und alle Preise.
 - Ob die Kegelbahn vollautomatisch ist, wie viele Bahnen es gibt und was sie kostet.
-- Fotos, Gästestimmen, Parkplätze, Bus, Instagram, Facebook.
-- Ob Google Maps vor einem echten Livegang so eingebunden bleiben darf. Der Datenschutztext lässt das offen.
+- Fotos von Außenansicht, Gastraum, Saal, Kegelbahn, Biergarten, Catering und Herstellung. Rechte an den Speisenfotos aus den Google-Maps-Inhaberfotos.
+- Parkplätze, Bus, Instagram, Facebook.
+- Ob Google Maps vor einem echten Livegang so eingebunden bleiben darf.
 - Ob neben GitHub Pages ein weiterer Hoster hängt. Im Repo steht dazu nichts.

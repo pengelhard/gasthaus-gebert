@@ -27,7 +27,33 @@
       "addressLocality": "Wassertrüdingen",
       "addressCountry": "DE"
     },
-    "telephone": "+499836441"
+    "telephone": "+499836441",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Thursday",
+        "opens": "11:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Friday",
+        "opens": "11:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Saturday",
+        "opens": "11:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "https://schema.org/Sunday",
+        "opens": "10:00",
+        "closes": "20:00"
+      }
+    ]
   }
   </script>
 </head>
@@ -76,7 +102,7 @@
           </address>
           <p class="kontaktzeile telefon-gross"><a href="tel:+499836441">09836 441</a></p>
           <p class="platzhalter-label">Platzhalter</p>
-          <p>Eine E-Mail-Adresse und ein Name für die Ansprechperson liegen noch nicht vor.</p>
+          <p>Eine E-Mail-Adresse liegt noch nicht vor. Der Inhaber ist im <a href="impressum.html">Impressum</a> genannt.</p>
         </div>
         <div>
           <div class="karte" id="anfahrt">
@@ -92,8 +118,16 @@
         <div>
           <h2 id="zeiten">Öffnungszeiten</h2>
           <div data-inhalt="oeffnungszeiten">
-            <p class="platzhalter-label">Platzhalter</p>
-            <p>Die Öffnungszeiten liegen noch nicht vor. Bitte kurz anrufen, bevor Sie vorbeikommen.</p>
+            <table class="zeiten">
+              <caption class="sr-only">Öffnungszeiten</caption>
+              <tr><td>Montag</td><td>geschlossen</td></tr>
+              <tr><td>Dienstag</td><td>geschlossen</td></tr>
+              <tr><td>Mittwoch</td><td>geschlossen</td></tr>
+              <tr><td>Donnerstag</td><td>11:00–20:00</td></tr>
+              <tr><td>Freitag</td><td>11:00–21:00</td></tr>
+              <tr><td>Samstag</td><td>11:00–21:00</td></tr>
+              <tr><td>Sonntag</td><td>10:00–20:00</td></tr>
+            </table>
           </div>
         </div>
         <div>
