@@ -243,10 +243,13 @@ a:hover { color: var(--wein); }
   flex-wrap: wrap;
   gap: 0.7rem;
   margin: 0 0 1rem;
+  max-width: 100%;
+  min-width: 0;
   color: var(--wein);
   font-weight: 600;
   letter-spacing: 0.01em;
 }
+.claim span { min-width: 0; }
 .claim::before, .claim::after {
   content: "";
   width: 1.6rem;
@@ -523,8 +526,21 @@ textarea { min-height: 8.5rem; resize: vertical; }
 .preis { font-weight: 700; color: var(--gruen); white-space: nowrap; }
 
 .fuss { background: var(--braun); color: var(--creme); padding: 2.6rem 0 1.8rem; }
-.fuss-innen { display: grid; gap: 1.25rem; }
-.fuss .marke-fuss { height: 84px; width: auto; }
+.fuss-innen { display: grid; gap: 1.25rem; min-width: 0; }
+.fuss-innen > * { min-width: 0; }
+.fuss .marke-fuss {
+  display: block;
+  width: 100%;
+  max-width: 17.5rem;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0.7rem 0.85rem 0.55rem;
+  border-radius: 3px;
+  background-color: var(--creme);
+  background-image: url("assets/papier.png");
+  background-size: 168px 168px;
+}
+.fuss address, .fuss .kontaktzeile { max-width: 100%; overflow-wrap: break-word; }
 .fuss a { color: var(--creme); }
 .fuss .claim { margin: 0.15rem 0 0.7rem; }
 .fuss .claim::before, .fuss .claim::after { background: var(--gold); }
@@ -585,7 +601,7 @@ code { font-family: ui-monospace, "Cascadia Code", monospace; font-size: 0.92em;
   .foto-held { aspect-ratio: 4 / 5; min-height: 440px; }
   .marke img { height: 76px; }
   #top { padding-top: 0.4rem; }
-  .fuss-innen { grid-template-columns: auto 1fr auto; align-items: center; }
+  .fuss-innen { grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; }
 }
 
 @media (min-width: 1100px) {
