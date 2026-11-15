@@ -20,10 +20,10 @@ Pflegequelle: `inhalte.js`, `oeffnungszeiten.freigegeben` ist `true`.
 
 Vier Bilder, Ausgangsgröße 2400×1600, auf Google Maps als Inhaberfotos des Eintrags „Gasthaus Gebert“ angezeigt. Peter hat sie am 15.11.2026 für diese Demo gegeben. Für das Web liegen je zwei WebP-Dateien (800 und 1600 Pixel breit) unter `assets/fotos/`:
 
-- `speise-schmor`: Fleischstücke in Soße mit Kroketten
-- `speise-schnitzel`: paniertes Schnitzel mit Spätzle
-- `speise-salat`: Salat mit panierten Talern
-- `speise-wuerste`: angerichtete Würste mit Kraut- oder Zwiebelstreifen
+- `speise-schmor`: Rehrücken mit Kroketten
+- `speise-schnitzel`: Cordon bleu mit Spätzle
+- `speise-salat`: Panierter Camembert mit Salat
+- `speise-wuerste`: Saure Zipfel, zwei saure Bratwürste im Zwiebelsud
 
 Das Wurstfoto ist ein Tellergericht. Es steht bei den Speisen, nicht als Foto der Metzgerei oder der Herstellung.
 
