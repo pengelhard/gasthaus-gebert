@@ -33,7 +33,7 @@
 </head>
 <body>
   <a class="sprung" href="#inhalt">Zum Inhalt</a>
-  <p class="demo-leiste">Demo-Entwurf · Platzhalter sind gekennzeichnet · Telefon und Adresse bitte bestätigen</p>
+  <p class="demo-leiste">Demo-Entwurf · Platzhalter sind gekennzeichnet</p>
   <header class="kopf">
     <div class="kopf-zeile">
       <a class="marke" href="index.html">
@@ -52,7 +52,6 @@
       </nav>
       <div class="anruf-block">
         <a class="btn" href="tel:+499836441">09836 441</a>
-        <span class="bestaetigen">bitte bestätigen</span>
       </div>
       <button class="menue-knopf" type="button" aria-expanded="false" aria-controls="hauptnav" aria-label="Menü öffnen">
         <span class="menue-balken"></span>
@@ -262,9 +261,66 @@
       <div class="seite abschnitt">
         <p class="ueberzeile">Gäste</p>
         <h2>Stimmen unserer Gäste</h2>
-        <div class="bewertung-platz">
-          <p class="platzhalter-label">Platzhalter</p>
-          <p>Echte Google-Bewertungen stehen hier, sobald sie vorliegen und freigegeben sind.</p>
+        <p class="gesamtnote">
+          <span class="sterne" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24" focusable="false">
+              <defs><clipPath id="stern-teil"><rect x="0" y="0" width="16.8" height="24"/></clipPath></defs>
+              <path fill="#cbb98a" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              <path fill="currentColor" clip-path="url(#stern-teil)" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </span>
+          <span>4,7 von 5 - 37 Google-Bewertungen <span class="note-stand">(Stand 11/2026)</span></span>
+        </p>
+        <ul class="stimmen">
+          <li>
+            <blockquote>
+              <p>„Mega leckeres Essen – geschmacklich top! Die Bedienung war super nett, und es ist wirklich für jeden etwas dabei, ob mit Fleisch oder vegetarisch. Der Nachtisch, besonders die Mousse au Chocolat, ist einfach himmlisch! Absolut empfehlenswert!“</p>
+              <footer><cite>Carmen</cite><span class="stimme-herkunft">Google-Bewertung</span></footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>„Wir waren zur Tauffeier im Gasthaus. Das Essen war hervorragend und alle Gäste waren begeistert. Der Service war sehr freundlich und aufmerksam, sodass wir uns rundum wohlgefühlt haben. Vielen Dank für die tolle Bewirtung – wir kommen gerne wieder!“</p>
+              <footer><cite>Morrison</cite><span class="stimme-herkunft">Google-Bewertung</span></footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>„Ein familiengeführter, typisch fränkischer Gasthaus, wie man ihn heute nur noch selten findet. Die Küche ist ausgezeichnet – ehrlich, bodenständig und extrem lecker. … Ein besonderer Pluspunkt: Der Inhaber ist gleichzeitig Metzger. … Klare Empfehlung – unbedingt besuchen.“</p>
+              <footer><cite>Mateusz</cite><span class="stimme-herkunft">Google-Bewertung</span></footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>„So freundlich wurde ich selten empfangen wie hier. Das Essen war wirklich lecker und der Service war weit über meinen Erwartungen. So viel Freundlichkeit ist man gar nicht mehr gewöhnt! Komme gerne wieder“</p>
+              <footer><cite>V.</cite><span class="stimme-herkunft">Google-Bewertung</span></footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>„Sehr gutes Essen (auch für Vegetarier) und freundlicher Service! Wir waren sehr zufrieden und kommen bestimmt wieder.“</p>
+              <footer><cite>Kerstin</cite><span class="stimme-herkunft">Google-Bewertung</span></footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>„Sehr leckeres Essen und super Service. Wir kommen gerne wieder.“</p>
+              <footer><cite>Christine</cite><span class="stimme-herkunft">Google-Bewertung</span></footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>„Sehr nettes Personal, prima Bananen-Sahne-Torte, gutbürgerliches Gasthaus, zivile Preise, Parkplätze vorm Haus, saubere WC-Anlagen. Kommen gerne wieder.“</p>
+              <footer><cite>Martina</cite><span class="stimme-herkunft">Google-Bewertung</span></footer>
+            </blockquote>
+          </li>
+        </ul>
+        <div class="aktionen">
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Gasthaus+Gebert+Oberm%C3%B6gersheim+182+Wassertr%C3%BCdingen" target="_blank" rel="noopener">Alle Bewertungen auf Google</a>
         </div>
       </div>
     </section>
@@ -277,9 +333,8 @@
           Gasthaus Gebert<br>
           Obermögersheim 182<br>
           91717 Wassertrüdingen
-          <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span>
         </address>
-        <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a> <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span></p>
+        <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a></p>
         <h3 id="zeiten">Öffnungszeiten</h3>
         <div data-inhalt="oeffnungszeiten">
           <p class="platzhalter-label">Platzhalter</p>
@@ -310,9 +365,8 @@
             Gasthaus Gebert<br>
             Obermögersheim 182<br>
             91717 Wassertrüdingen
-            <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span>
           </address>
-        <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a> <span class="bestaetigen" title="Aus öffentlichem Eintrag, noch nicht vom Haus bestätigt">bitte bestätigen</span></p>
+        <p class="kontaktzeile"><a href="tel:+499836441">09836 441</a></p>
       </div>
       <div>
         <nav class="fuss-nav" aria-label="Rechtliches">
