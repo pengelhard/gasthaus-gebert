@@ -2,7 +2,7 @@
    Öffnungszeiten, Speisekarte, Getränkekarte und Catering hier eintragen.
    Die Seiten zeigen den Platzhalter, solange "freigegeben" nicht true ist
    oder die jeweilige Liste leer bleibt.
-   Adresse und Telefon stehen zusätzlich im HTML (Recherche, bitte bestätigen)
+   Adresse und Telefon stehen zusätzlich im HTML.
    und müssen bei einer Änderung dort mit geändert werden.
 
    Form der Einträge, ohne Beispielgerichte:
