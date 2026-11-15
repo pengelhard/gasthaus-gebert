@@ -136,4 +136,116 @@
   });
   };
   window.gasthausInhalteZeichnen();
+
+  var SPEICHER = "gasthaus-karte";
+  var ORT = [49.0566588, 10.6558886];
+  var merk = null;
+  var plan = null;
+  var leiste = null;
+
+  function lesen() {
+    try { return localStorage.getItem(SPEICHER); }
+    catch (e) { return merk; }
+  }
+
+  function schreiben(wert) {
+    merk = wert;
+    try { localStorage.setItem(SPEICHER, wert); }
+    catch (e) {}
+  }
+
+  function banner() {
+    if (leiste) return leiste;
+    leiste = document.createElement("div");
+    leiste.className = "einwilligung";
+    leiste.setAttribute("role", "region");
+    leiste.setAttribute("aria-label", "Einwilligung für die Karte");
+    var text = document.createElement("p");
+    text.textContent = "Die Karte lädt Kacheln von OpenStreetMap. Dafür brauchen wir Ihre Einwilligung.";
+    var aktionen = document.createElement("div");
+    aktionen.className = "einwilligung-aktionen";
+    var ja = document.createElement("button");
+    ja.type = "button";
+    ja.className = "btn btn-gleich";
+    ja.textContent = "Akzeptieren";
+    var nein = document.createElement("button");
+    nein.type = "button";
+    nein.className = "btn btn-gleich";
+    nein.textContent = "Ablehnen";
+    aktionen.append(ja, nein);
+    leiste.append(text, aktionen);
+    document.body.appendChild(leiste);
+    ja.addEventListener("click", function () { entscheiden("ja"); });
+    nein.addEventListener("click", function () { entscheiden("nein"); });
+    return leiste;
+  }
+
+  function bannerZeigen(an) {
+    var el = banner();
+    el.hidden = !an;
+    document.body.classList.toggle("hat-einwilligung", an);
+  }
+
+  function karteZeichnen() {
+    var feld = document.getElementById("karte-feld");
+    var ruhe = document.getElementById("karte-ruhe");
+    if (!feld || !window.L) return;
+    if (ruhe) ruhe.hidden = true;
+    feld.hidden = false;
+    if (!plan) {
+      plan = L.map(feld, {
+        scrollWheelZoom: true,
+        touchZoom: true,
+        dragging: true
+      }).setView(ORT, 16);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'
+      }).addTo(plan);
+      L.marker(ORT, {
+        icon: L.divIcon({
+          className: "karte-pin",
+          iconSize: [16, 16],
+          iconAnchor: [8, 8]
+        })
+      }).addTo(plan).bindTooltip("Gasthaus Gebert", { direction: "top" });
+    }
+    plan.invalidateSize();
+  }
+
+  function ruheZeigen(hinweis) {
+    var feld = document.getElementById("karte-feld");
+    var ruhe = document.getElementById("karte-ruhe");
+    var laden = document.getElementById("karte-laden");
+    if (ruhe) ruhe.hidden = false;
+    if (feld) feld.hidden = true;
+    if (laden) laden.hidden = !hinweis;
+  }
+
+  function entscheiden(wert) {
+    schreiben(wert);
+    bannerZeigen(false);
+    if (!document.getElementById("anfahrt")) return;
+    if (wert === "ja") karteZeichnen();
+    else ruheZeigen(true);
+  }
+
+  var stand = lesen();
+  if (document.getElementById("anfahrt")) {
+    if (stand === "ja") karteZeichnen();
+    else if (stand === "nein") ruheZeigen(true);
+    else {
+      ruheZeigen(false);
+      bannerZeigen(true);
+    }
+  }
+
+  document.querySelectorAll(".cookie-einstellungen").forEach(function (knopf) {
+    knopf.addEventListener("click", function () { bannerZeigen(true); });
+  });
+
+  var ladenKnopf = document.getElementById("karte-laden");
+  if (ladenKnopf) {
+    ladenKnopf.addEventListener("click", function () { entscheiden("ja"); });
+  }
 })();
