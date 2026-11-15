@@ -220,6 +220,16 @@ a:hover { color: var(--wein); }
 .prosa p, .prosa li { max-width: 62ch; }
 .prosa h2 { font-size: 1.35rem; margin-top: 1.7rem; }
 
+.zurueck {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0 0 0.15rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.zurueck:hover { text-decoration: underline; }
+
 .ueberzeile {
   margin: 0 0 0.7rem;
   font-size: 0.75rem;
