@@ -29,7 +29,7 @@ Das Wurstfoto ist ein Tellergericht. Es steht bei den Speisen, nicht als Foto de
 
 Vor einer echten Kundenveröffentlichung sind die Rechte an diesen Google-Maps-Inhaberfotos zu klären.
 
-Für Außenansicht, Gastraum, Saal, Kegelbahn, Biergarten, Catering und Herstellung gibt es keine Fotos. Dort bleiben die bisherigen Platzhalter. Es werden keine fremden Motive eingesetzt.
+Für Außenansicht, Gastraum, Saal, Kegelbahn, Biergarten, Catering und Herstellung gibt es keine Fotos. Die leeren Rahmen und die Hinweise dazu stehen nicht auf den Seiten. Es werden keine fremden Motive eingesetzt.
 
 ## Offene Platzhalter
 
