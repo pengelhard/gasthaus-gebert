@@ -516,7 +516,89 @@ a:hover { color: var(--wein); }
   box-shadow: inset 0 0 0 1px rgba(168, 132, 61, 0.35);
   margin: 0.2rem 0 0.9rem;
 }
-.karte iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.karte-feld,
+.karte-feld .leaflet-container { position: absolute; inset: 0; width: 100%; height: 100%; background: #e4d5bc; }
+.karte-ruhe[hidden],
+.karte-feld[hidden],
+.karte-laden[hidden] { display: none; }
+.karte-ruhe {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1.15rem 1.2rem;
+  background-color: #e7d7bc;
+  background-image: url("assets/papier.png");
+  background-size: 168px 168px;
+}
+.karte-adresse {
+  margin: 0 0 0.35rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+.karte-laden {
+  margin: 0.15rem 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--gruen);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+  min-height: 44px;
+}
+.karte-laden:hover { color: var(--wein); }
+.karte .leaflet-control-attribution {
+  font-size: 0.68rem;
+  background: rgba(245, 240, 230, 0.88);
+}
+.karte-pin {
+  width: 16px;
+  height: 16px;
+  background: var(--gruen);
+  border: 2px solid var(--creme);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(29, 74, 40, 0.22);
+}
+
+.einwilligung {
+  position: fixed;
+  z-index: 45;
+  left: 0;
+  right: 0;
+  bottom: 5.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem 1rem;
+  padding: 0.45rem 1rem;
+  background: var(--creme);
+  border-top: 1px solid rgba(168, 132, 61, 0.55);
+  box-shadow: 0 -1px 8px rgba(42, 36, 28, 0.06);
+}
+.einwilligung[hidden] { display: none; }
+.einwilligung p { margin: 0; flex: 1 1 16rem; font-size: 0.95rem; line-height: 1.35; }
+.einwilligung-aktionen { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.btn.btn-gleich,
+.btn.btn-gleich:hover {
+  background: transparent;
+  color: var(--gruen);
+  border-color: var(--gruen);
+}
+.btn.btn-gleich:hover { background: rgba(29, 74, 40, 0.07); }
+body.hat-einwilligung { padding-bottom: 12rem; }
+@media (min-width: 1100px) {
+  .einwilligung { bottom: 0; }
+  body.hat-einwilligung { padding-bottom: 4.6rem; }
+}
 
 .kontaktzeile { margin-bottom: 0.45rem; }
 .werte { padding-left: 1.15rem; margin: 0 0 1rem; }
@@ -577,8 +659,20 @@ textarea { min-height: 8.5rem; resize: vertical; }
 .fuss .claim { margin: 0.15rem 0 0.85rem; }
 .fuss .claim::after { background: var(--gold); }
 .fuss-nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; }
-.fuss-nav a { text-decoration: none; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
-.fuss-nav a:hover { text-decoration: underline; }
+.fuss-nav a,
+.fuss-nav .cookie-einstellungen { text-decoration: none; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+.fuss-nav a:hover,
+.fuss-nav .cookie-einstellungen:hover { text-decoration: underline; }
+.fuss-nav .cookie-einstellungen {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
 .klein { font-size: 0.95rem; color: rgba(245, 240, 230, 0.84); margin: 0; }
 .fuss .sozial-platz {
   margin-top: 0.35rem;
